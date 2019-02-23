@@ -219,140 +219,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/23/ne/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="dada">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/02/23/ne/" itemprop="url">ne</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-23T18:57:04+08:00">
-                2019-02-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/02/23/ne/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/02/23/ne/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          e
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/02/23/ne/">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/23/排序算法/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -384,7 +250,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-23T18:53:56+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-23T00:00:00+08:00">
                 2019-02-23
               </time>
             
@@ -433,188 +299,14 @@
 
       
         
-          
-            <p>&lt; !–more–&gt;</p>
-<h3 id="十大排序算法实现与总结"><a href="#十大排序算法实现与总结" class="headerlink" title="　　　　十大排序算法实现与总结"></a>　　　　十大排序算法实现与总结</h3><p>冒泡排序：</p>
-<pre><code>def bubble_sort (lists):
-　　length = len(lists)
-　　for index in range(length):
-   　　　for i in range (1, length-index):
-       　　if lists[i-1] &gt; lists[i]:
-            　lists[i], lists[i-1] = lists[i-1],lists[i]
-　　return lists
-</code></pre><p>　　持续每次对越来越少的元素重复比较相邻的，直到没有任何一对数字需要比较,这就会有最好的时间复杂度O(n)</p>
-<p>选择排序：</p>
-<pre><code>def select_sort (lists):
-　　length = len(lists)
-　　for index in range(length):
-    　　for i in range(index+1, length):
-        　　if lists[index] &gt; lists[i]:
-            　　lists[index], lists[i] = lists[i], lists[index]
-　　return lists
-</code></pre><p>插入排序:</p>
-<pre><code>def insertion_sort(lists):  
-    length = len(lists)
-    for index in range(1, length):
-        key = lists[index]
-        for i in range(index-1,-1,-1):
-            if lists[i] &gt; key:
-               lists[i+1],lists[i] = lists[i],lists[i+1]
-               key = lists[i]
-            else:   #最好时间复杂度O(n)
-                break
-    return lists
-</code></pre><p>　　以上三种空间复杂度为O(1),平均时间复杂度为O(n2),最坏O(n2),最好插入和冒泡为O(n),选择为O(n2)</p>
-<p>希尔排序：</p>
-<pre><code>def shell_sort(lists): #插入排序改进版
-　　length = len(lists)
-　　dist = length // 2
-　　while dist &gt; 0:
-    　　for i in range(dist,length):
-        　　item = i
-       　　 while (item-dist) &gt;= 0:
-            　　if lists[item] &lt; lists[item-dist]:
-                　　lists[item],lists[item-dist] = lists[item-dist],lists[item]
-                　　item = item - dist 
-            　　else:
-                　　break
-   　　 dist //= 2
-　　 return lists
-</code></pre><p>平均时间复杂度O(n1.3),最坏O(n2),最好O(n),空间复杂度O(1).</p>
-<p>归并排序:</p>
-<pre><code>def merge_sort(lists):
-    if len(lists) &lt;= 1 :
-        return lists
-    mid = len(lists) // 2
-    left = merge_sort(lists[:mid])
-    right = merge_sort(lists[mid:])
-    return merge(left,right)
-def merge(left,right):
-
-    result = []
-    i = 0
-    j = 0
-
-    while len(left) &gt; i and len(right) &gt; j:
-        if left[i] &lt; right[j]:
-            result.append(left[i])
-            i += 1
-        else:
-            result.append(right[j])
-            j += 1
-    result += left[i:]
-    result += right[j:]
-    return result
-</code></pre><p>　　平均时间复杂度,最坏时间复杂度,最好时间复杂度均为O(nlog(n)),空间复杂度为O(n)</p>
-<p>快速排序：</p>
-<pre><code>def quick_sort(lists,low,high):
-    if low &lt; high:
-        key_index = partition(lists,low,high)
-        quick_sort(lists,low,key_index)
-        quick_sort(lists,key_index + 1,high)
-
-def partition(lists,low,high):
-    key = lists[low]
-    while low &lt; high:
-        while low &lt; high and lists[high] &gt;= key:
-            high -= 1
-        if low &lt; high :
-            lists[low] = lists[high]
-
-        while low &lt; high and lists[low] &lt; key:
-            low += 1
-        if low &lt; high :
-            lists[high] = lists[low]
-        lists[low] = key
-    return low
-</code></pre><p>　　平均时间复杂度O(nlogn),最坏时间复杂度O(n2),最好时间复杂度O(nlogn),空间复杂度O(logn)　　　　　　　　　　　　</p>
-<p>　　快速排序是对列表本身做调整,故无返回值.对倒序排列时间复杂度最坏,退化到冒泡排序.故越无序用排序越好.</p>
-<p>  堆排序 :</p>
-<pre><code>def heap_ajust (L, start, end):
-    while start &gt;= 0:
-        root = start
-
-        while True:
-            child = 2 * root + 1
-            if child &gt; end :
-                break
-
-            # 两个孩子找出最大的那个
-            if child + 1 &lt;= end and L[child] &lt; L[child + 1]:
-                child += 1
-
-            if L[root] &lt; L[child]:
-                L[root], L[child] = L[child], L[root]
-                root = child
-            else:
-                break
-
-        start -= 1
-    return L 
-
-def heap_sort (L):
-     L_length = len(L)
-     start = L_length // 2 - 1
-     while L_length != 0:
-         L = heap_ajust(L, start, L_length - 1)
-         L[L_length - 1], L[0] = L[0], L[L_length - 1]
-         L_length -= 1
-     return L
-</code></pre><p> 堆排序最坏最好平均时间复杂度均为O(nlog(n)),空间复杂度为O(1)</p>
-<p> 计数排序 :</p>
-<pre><code>def counting_sort(L):
-    # 找最大值
-    max = L[0]
-    for i in range(1,len(L)):
-        if L[i] &gt; max:
-            max = L[i]
-
-    item = [0 for i  in range(max+1)]
-    for i in L:
-        item[i] += 1
-
-    result = []
-    for j in range(len(item)):
-        if item[j] != 0:
-            result.append(j)
-            item[j] -= 1
-    return result
-</code></pre><p> 　　 计数排序是将待排序数值范围做新列表底i,而将每个值的个数做item[i],重新输出到result.可找待排序最小值以缩短时间,适合排序数值密集型的,并且不能有小数和负数.</p>
-<p>　　最好最坏以及平均时间复杂度均为O(n+k),空间复杂度也是O(n+k)</p>
-<p>桶排序 : </p>
-<pre><code>def bucket_sort(L):
-   _max = max(L)
-   # 定义桶的数量及大小
-   item = [0 for i in range(_max // 10 + 1)]
-   for i in range(len(item)):
-       item[i] = []
-   # 把相应数值放入桶中
-   for i in L:
-       item[i // 10].append(i)
-
-   # 每个桶排序
-   for i in range(len(item)):
-       insertion_sort(item[i])
-   #输出结果
-   result = []
-   for i in range (len(item)):
-       for j in range(len(item[i])):
-           result.append(item[i][j])
-   return result
-</code></pre><p>　　桶排序最好时间复杂度是O(n),最坏时间复杂度是O(n2),平均时间复杂度O(n+k),空间复杂度为O(n+k).桶排序最好情况下使用线性时间O(n)，桶排序的时间复杂度，取决与对各个桶之间数据进行排序的时间复杂度，因为其它部分的时间复杂度都为O(n)。很显然，桶划分的越小，各个桶之间的数据越少，排序所用的时间也会越少。但相应的空间消耗就会增大。</p>
-<p>　　桶排序是计数排序的升级版。它利用了函数的映射关系，高效与否的关键就在于这个映射函数的确定.　桶排序的工作的原理：假设输入数据服从均匀分布，将数据分到有限数量的桶里，每个桶再分别排序（有可能再使用别的排序算法或是以递归方式继续使用桶排序进行排）.</p>
-<p>  基数排序：</p>
-<pre><code>def radix_sort(L, digit):
-    for i in range(digit):
-        s = [[] for j in range(10) ] #做桶
-        for item in L:
-            s[item // (10 ** i) %10].append(item)
-        L = [m for k in s for m in k]
-    return L 
-</code></pre><p>　　最好最坏以及平均时间复杂度为O(k*n), 空间复杂度为O(n+k), 其中 k &lt;&lt; n.</p>
-<p>　　基数排序的性能比桶排序要略差,因其每次放入桶中后还要拿出来,故时间复杂度略高.</p>
-
-          
+          python 实现十大排序算法
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/02/23/排序算法/">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -845,7 +537,7 @@ def heap_sort (L):
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
