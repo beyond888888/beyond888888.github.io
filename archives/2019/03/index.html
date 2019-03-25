@@ -79,17 +79,13 @@
 
 
 
-<meta name="description" content="通过问题方式学习Cassandra原理">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Cassandra 原理">
-<meta property="og:url" content="http://yoursite.com/2018/12/19/cassandra原理/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="dada">
+<meta property="og:url" content="http://yoursite.com/archives/2019/03/index.html">
 <meta property="og:site_name" content="dada">
-<meta property="og:description" content="通过问题方式学习Cassandra原理">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-26T08:37:22.321Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Cassandra 原理">
-<meta name="twitter:description" content="通过问题方式学习Cassandra原理">
+<meta name="twitter:title" content="dada">
 
 
 
@@ -119,13 +115,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/12/19/cassandra原理/">
+  <link rel="canonical" href="http://yoursite.com/archives/2019/03/">
 
 
 
 
 
-  <title>Cassandra 原理 | dada</title>
+  <title>归档 | dada</title>
   
 
 
@@ -144,7 +140,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left page-archive">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -208,180 +204,107 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
+  
+  
+  
+  <div class="post-block archive">
+    <div id="posts" class="posts-collapse">
+      <span class="archive-move-on"></span>
 
-  
+      <span class="archive-page-counter">
+        
+        
+        
+          
+        
+        嗯..! 目前共计 4 篇日志。 继续努力。
+      </span>
 
-  
-  
-  
+      
+
+        
+        
+        
+
+        
+          
+          <div class="collection-title">
+            <h1 class="archive-year" id="archive-year-2019">2019</h1>
+          </div>
+        
+        
+
+        
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/19/cassandra原理/">
+    <header class="post-header">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="dada">
-    </span>
-
-    
-      <header class="post-header">
-
+      <h2 class="post-title">
         
-        
-          <h1 class="post-title" itemprop="name headline">Cassandra 原理</h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
+            <a class="post-title-link" href="/2019/03/25/python基础笔记/" itemprop="url">
               
-                <span class="post-meta-item-text">发表于</span>
+                <span itemprop="name">python基础笔记（一）</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-19T00:00:00+08:00">
-                2018-12-19
-              </time>
-            
+            </a>
+        
+      </h2>
 
-            
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated" datetime="2019-03-25T00:00:00+08:00" content="2019-03-25">
+          03-25
+        </time>
+      </div>
 
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/12/19/cassandra原理/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/12/19/cassandra原理/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-              <div class="post-description">
-                  通过问题方式学习Cassandra原理      　　
-              </div>
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <p>　　　最近学cassandra，通过问题方式学习cassandra基本原理。</p>
-<ol>
-<li><p>　Cassandra 读取过程    </p>
-<pre><code>keyspace　-&gt;　columnFamily　-&gt;　key　-&gt;　columnName　-&gt;　valume　-&gt; timestemp
-</code></pre></li>
-<li><p>　Cassandra 单点失效<br>　 Cassandra采用p2p模式，无中心节点，即无管理节点，不存在单点失效问题．</p>
-</li>
-<li><p>　 Cassandra中的key<br>　　key相当于DBMS的主键，区分不同行．column是列名，key相当于特殊的列名．</p>
-</li>
-<li><p>　 Cassandra中的分区键　<br>　　分区键负责数据分发，相当于DBMS主键包括两个以上的列．</p>
-</li>
-<li><p>　 列排序<br>　　cassandra中一行可以包括很多列，且不需要对应，当一行有很多列时查找变得困难，故可用一行中的列排序，提高查找效率．列排序只按一行中列名进行排序，不排序列值．</p>
-</li>
-<li><p>　 cassandra 中的CAP<br>一致性（Ｃ）：　<br>　分为两个，strong consistent  </p>
-<pre><code>Ｗ　+　Ｒ　＞　Ｎ
-</code></pre><p>　 week consistent </p>
-<pre><code>Ｗ　+　Ｒ　＜＝　Ｎ
-</code></pre><p>　N — 数据复制的份数<br>　W — 更新数据时需要保证写完成的节点数<br>　R — 读取数据的时候需要读取的节点数<br>cassandra 根据　timestamp　判断最新值　　<br>可用性（Ａ）: 所有节点数据，客户端总是可以读取，可用性较高.<br>分区容错性（Ｐ）</p>
-</li>
-<li>　cassandra读写问题　　　　　　　<br>　　提高写速度:　写时不读（故cassandra　写＞读）<br>　　提高读速度:　修改只写不改，后面会通过压紧方式清理．　　</li>
-</ol>
-<p>　8.　 p2p与master/serve 读写区别<br>　　　　p2p : 节点全可读可写，对cassandra来说写时不读．<br>　　　　master/serve: 节点全可读，写时只有从master节点开始．</p>
-
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2018/10/23/排序算法/" rel="next" title="十大排序算法实现与总结">
-                <i class="fa fa-chevron-left"></i> 十大排序算法实现与总结
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/20/产品/" rel="prev" title="产品学习">
-                产品学习 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
+    </header>
   </article>
 
 
 
-    <div class="post-spread">
       
+
+        
+        
+        
+
+        
+        
+
+        
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+            <a class="post-title-link" href="/2019/03/20/产品/" itemprop="url">
+              
+                <span itemprop="name">产品学习</span>
+              
+            </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated" datetime="2019-03-20T00:00:00+08:00" content="2019-03-20">
+          03-20
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+
+      
+
     </div>
   </div>
+  
+  
+  
+
+  
+
 
 
           </div>
@@ -389,13 +312,6 @@
 
 
           
-
-  
-    <div class="comments" id="comments">
-    </div>
-  
-
-
 
         </div>
         
@@ -598,10 +514,6 @@
   
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
-
-
 
   
 
