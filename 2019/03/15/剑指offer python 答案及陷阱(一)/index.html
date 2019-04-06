@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="dada">
 <meta property="og:description" content="树的子结构，有序链表合并，调整数组顺序奇数位于偶数前面，打印从1到n位数的所有数字，浮点数a的整数b次方，斐波那契，程序遍历，无限完全二叉树，重建二叉树．">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-25T07:27:03.790Z">
+<meta property="og:updated_time" content="2019-03-25T09:41:01.807Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="剑指offer python代码及陷阱(一)">
 <meta name="twitter:description" content="树的子结构，有序链表合并，调整数组顺序奇数位于偶数前面，打印从1到n位数的所有数字，浮点数a的整数b次方，斐波那契，程序遍历，无限完全二叉树，重建二叉树．">
@@ -391,32 +391,32 @@ while head:
  array = [1,5,6,8,7,3]
  print(ReorderOddEven(array))
 </code></pre></li>
-<li><h4 id="打印从1到n位数的所有数字-陷阱n可能很大-变大数问题"><a href="#打印从1到n位数的所有数字-陷阱n可能很大-变大数问题" class="headerlink" title="打印从1到n位数的所有数字(陷阱n可能很大,变大数问题)"></a>打印从1到n位数的所有数字(陷阱n可能很大,变大数问题)</h4><pre><code>def printNumber(n):
-    number = [&apos;0&apos;] * n
-    for i in range(10):
-            number[0] = str(i)
-            printIndex(number,n,0)
-def printIndex(number,n,index):
-        if index == n-1:
-                printReal(number)
-                return 
-        else:
-                for i in range(10):
-                        number[index+1] = str(i)
-                        printIndex(number,n,index+1)
-def printReal(number):
-        i = 0
-        while i &lt;= len(number)-1:
-                if number[i] == &apos;0&apos;:
-                        i += 1
-                else:
-                        print(&apos;&apos;.join(number[i:]))
-                        break
+<li><h4 id="打印从1到n位数的所有数字"><a href="#打印从1到n位数的所有数字" class="headerlink" title="打印从1到n位数的所有数字:"></a>打印从1到n位数的所有数字:</h4><pre><code>  def printNumber(n):
+      number = [&apos;0&apos;] * n
+      for i in range(10):
+              number[0] = str(i)
+              printIndex(number,n,0)
+  def printIndex(number,n,index):
+          if index == n-1:
+                  printReal(number)
+                  return 
+          else:
+                  for i in range(10):
+                          number[index+1] = str(i)
+                          printIndex(number,n,index+1)
+  def printReal(number):
+          i = 0
+          while i &lt;= len(number)-1:
+                  if number[i] == &apos;0&apos;:
+                          i += 1
+                  else:
+                          print(&apos;&apos;.join(number[i:]))
+                          break
+  printNumber(2)
+
+# 陷阱n可能很大,变大数问题      
 </code></pre></li>
-</ul>
-<pre><code>printNumber(2)
-</code></pre><ul>
-<li><h4 id="浮点数a的整数b次方-陷阱-时间log-n-情况的完整性a-b情况"><a href="#浮点数a的整数b次方-陷阱-时间log-n-情况的完整性a-b情况" class="headerlink" title="浮点数a的整数b次方(陷阱:时间log(n),情况的完整性a,b情况):"></a>浮点数a的整数b次方(陷阱:时间log(n),情况的完整性a,b情况):</h4><pre><code>def  pow(a,b):
+<li><h4 id="浮点数a的整数b次方"><a href="#浮点数a的整数b次方" class="headerlink" title="浮点数a的整数b次方:"></a>浮点数a的整数b次方:</h4><pre><code>def  pow(a,b):
     if b == 0:
             return 1
     ant = pow(a, b//2)
@@ -443,8 +443,10 @@ if a &gt; 0:
         print(pow(1/a,-b))
     else:
         print(pow(a,b))
+
+ # 陷阱:时间log(n),情况的完整性a,b情况
 </code></pre></li>
-<li><h4 id="斐波那契-要求-logn-同类型题-青蛙跳台阶-矩形重叠-扩展疯狂青蛙跳台阶"><a href="#斐波那契-要求-logn-同类型题-青蛙跳台阶-矩形重叠-扩展疯狂青蛙跳台阶" class="headerlink" title="斐波那契(要求:logn)　(同类型题:青蛙跳台阶,矩形重叠,扩展疯狂青蛙跳台阶):"></a>斐波那契(要求:logn)　(同类型题:青蛙跳台阶,矩形重叠,扩展疯狂青蛙跳台阶):</h4><pre><code>def fibonacci(n):
+<li><h4 id="斐波那契-要求-logn"><a href="#斐波那契-要求-logn" class="headerlink" title="斐波那契(要求:logn):　"></a>斐波那契(要求:logn):　</h4><pre><code>def fibonacci(n):
       f =[0,1,1]
       if n == 0:
           return 0
@@ -455,6 +457,8 @@ if a &gt; 0:
           f[0] = f[1]
           f[1] = f[2]
       return f[1]
+
+ #同类型题:青蛙跳台阶,矩形重叠,扩展疯狂青蛙跳台阶
 </code></pre><p><br></p>
 </li>
 <li><h4 id="层序遍历-用队列-鲁棒性"><a href="#层序遍历-用队列-鲁棒性" class="headerlink" title="层序遍历(用队列,鲁棒性):"></a>层序遍历(用队列,鲁棒性):</h4><pre><code>class TreeNode():
@@ -654,7 +658,7 @@ print(root.left.val)
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -691,7 +695,7 @@ print(root.left.val)
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#树的子结构-注意情况的完整性-代码的鲁棒性-："><span class="nav-number">1.</span> <span class="nav-text">树的子结构(注意情况的完整性,代码的鲁棒性)：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#有序链表合并-注意特殊情况-即代码的鲁棒性"><span class="nav-number">2.</span> <span class="nav-text">有序链表合并(注意特殊情况,即代码的鲁棒性):</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#调整数组顺序奇数位于偶数前面-时间复杂度为O-n"><span class="nav-number">3.</span> <span class="nav-text">调整数组顺序奇数位于偶数前面(时间复杂度为O(n))</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#打印从1到n位数的所有数字-陷阱n可能很大-变大数问题"><span class="nav-number">4.</span> <span class="nav-text">打印从1到n位数的所有数字(陷阱n可能很大,变大数问题)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#浮点数a的整数b次方-陷阱-时间log-n-情况的完整性a-b情况"><span class="nav-number">5.</span> <span class="nav-text">浮点数a的整数b次方(陷阱:时间log(n),情况的完整性a,b情况):</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#斐波那契-要求-logn-同类型题-青蛙跳台阶-矩形重叠-扩展疯狂青蛙跳台阶"><span class="nav-number">6.</span> <span class="nav-text">斐波那契(要求:logn)　(同类型题:青蛙跳台阶,矩形重叠,扩展疯狂青蛙跳台阶):</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#层序遍历-用队列-鲁棒性"><span class="nav-number">7.</span> <span class="nav-text">层序遍历(用队列,鲁棒性):</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#无限完全二叉树-输入和n-补数k-每个节点可加可减-打印结果-牛客模拟题"><span class="nav-number">8.</span> <span class="nav-text">无限完全二叉树,输入和n,补数k,每个节点可加可减,打印结果(牛客模拟题):</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#重建二叉树"><span class="nav-number">9.</span> <span class="nav-text">重建二叉树:</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#树的子结构-注意情况的完整性-代码的鲁棒性-："><span class="nav-number">1.</span> <span class="nav-text">树的子结构(注意情况的完整性,代码的鲁棒性)：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#有序链表合并-注意特殊情况-即代码的鲁棒性"><span class="nav-number">2.</span> <span class="nav-text">有序链表合并(注意特殊情况,即代码的鲁棒性):</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#调整数组顺序奇数位于偶数前面-时间复杂度为O-n"><span class="nav-number">3.</span> <span class="nav-text">调整数组顺序奇数位于偶数前面(时间复杂度为O(n))</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#打印从1到n位数的所有数字"><span class="nav-number">4.</span> <span class="nav-text">打印从1到n位数的所有数字:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#浮点数a的整数b次方"><span class="nav-number">5.</span> <span class="nav-text">浮点数a的整数b次方:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#斐波那契-要求-logn"><span class="nav-number">6.</span> <span class="nav-text">斐波那契(要求:logn):　</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#层序遍历-用队列-鲁棒性"><span class="nav-number">7.</span> <span class="nav-text">层序遍历(用队列,鲁棒性):</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#无限完全二叉树-输入和n-补数k-每个节点可加可减-打印结果-牛客模拟题"><span class="nav-number">8.</span> <span class="nav-text">无限完全二叉树,输入和n,补数k,每个节点可加可减,打印结果(牛客模拟题):</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#重建二叉树"><span class="nav-number">9.</span> <span class="nav-text">重建二叉树:</span></a></li></ol></div>
             
 
           </div>
